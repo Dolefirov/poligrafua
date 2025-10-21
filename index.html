@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Друкарня POLIGRAFUA — друк швидко і красиво</title>
+  <meta name="description" content="Друкарня POLIGRAFUA. Офсетний, цифровий, сувенірний, широкоформатний друк. Дизайн та препрес. Київ, вул. Довженка, 3." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg:'#eaf3f8',
+            ink:'#5c5c5c',
+            brand:'#17a1e6',
+            accent:'#ffb21c'
+          },
+          boxShadow:{ soft:'0 10px 30px rgba(0,0,0,.08)' },
+          borderRadius:{ '3xl':'22px' },
+          fontFamily:{ inter:['Inter','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial'] }
+        }
+      }
+    }
+  </script>
+  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}</style>
+</head>
+<body class="m-0 bg-bg text-ink">
+  <!-- ===================== HEADER ===================== -->
+  <header id="home" class="sticky top-0 z-50 bg-bg/90 backdrop-saturate-150 backdrop-blur-md border-b border-black/10">
+    <div class="max-w-[1200px] mx-auto flex items-center gap-6 py-5 px-5">
+      <a href="#home" aria-label="POLIGRAFUA" class="flex items-center gap-3">
+        <img class="h-20 w-auto drop-shadow-sm" src="mockup/polyua_logo.png" alt="POLIGRAFUA logo" />
+      </a>
+      <!-- Burger on mobile -->
+      <button id="burger" class="ml-auto md:hidden p-2 rounded-lg hover:bg-white/70" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <!-- Desktop nav -->
+      <nav class="ml-auto hidden md:flex items-center gap-6">
+        <a href="#services" class="font-semibold transition hover:text-brand">Послуги</a>
+        <a href="#products" class="font-semibold transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="font-semibold transition hover:text-brand">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile sidebar menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+    <button id="mm-backdrop" class="absolute inset-0 bg-black/40" aria-label="Закрити меню"></button>
+    <aside id="mm-panel" class="absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-white text-ink shadow-soft p-5 translate-x-full transition-transform duration-300">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-extrabold text-lg">POLIGRAF<span class="text-brand">UA</span></span>
+        <button id="mm-close" class="p-2 rounded hover:bg-black/5" aria-label="Закрити">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+        </button>
+      </div>
+      <nav class="grid gap-3">
+        <a href="#services" class="font-semibold transition hover:text-brand">Послуги</a>
+        <a href="#products" class="font-semibold transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="font-semibold transition hover:text-brand">Контакти</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="relative overflow-hidden" aria-label="Вступний блок">
+    <div data-parallax data-speed="0.35" class="absolute inset-0 -z-10" style="background:radial-gradient(1100px 400px at 70% 0%, rgba(23,161,230,.16), transparent), #eaf3f8"></div>
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-10 py-12 px-5">
+      <div>
+        <h1 class="text-[#24333f] leading-[1.03] mb-4 text-[clamp(36px,4vw,58px)] font-extrabold">Друк швидко й без зайвих питань</h1>
+        <p class="text-[#4a5864] mb-7 text-[clamp(15px,1.3vw,18px)]">Оберіть формат, тираж та матеріал — ми підкажемо найкращі налаштування і виконаємо вчасно.</p>
+        <div class="flex flex-wrap gap-2.5 mb-6">
+          <span class="px-3.5 py-2 rounded-full border border-dashed border-brand/50 bg-white">Від 24 годин</span>
+          <span class="px-3.5 py-2 rounded-full border border-dashed border-brand/50 bg-white">Доставка по Україні</span>
+          <span class="px-3.5 py-2 rounded-full border border-dashed border-brand/50 bg-white">Персональний менеджер</span>
+        </div>
+        <a href="catalog.html" class="inline-flex items-center font-bold rounded-xl px-5 py-3 shadow-[0_8px_18px_rgba(23,161,230,.35)] bg-accent text-white">Каталог продукції</a>
+      </div>
+      <img src="./Paper_Shopping.png" alt="" class="justify-self-end self-center max-w-full" />
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" aria-label="Послуги" class="scroll-mt-28 py-16 px-5">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-[40px] text-center mb-7 font-bold tracking-wide">Послуги</h2>
+      <p class="text-center text-[#5b6a76] max-w-[860px] mx-auto mb-9">Пʼять основних напрямів друку. Зображення — тимчасові плейсхолдери (жовтий логотип), текст — стислий опис для візитки.</p>
+
+      <div class="grid gap-5">
+        <!-- 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center bg-white rounded-2xl shadow-soft border border-black/10 overflow-hidden">
+          <div class="relative [background:linear-gradient(0deg,rgba(255,178,28,.15),rgba(255,178,28,.15)),#fff] flex items-center justify-center min-h-[220px]">
+            <img src="./logo-yellow.png" alt="Офсетний друк" class="max-w-[72%] h-auto drop-shadow-xl" />
+          </div>
+          <div class="px-7 py-7">
+            <h3 class="text-2xl font-bold mb-2">Офсетний друк</h3>
+            <p class="text-[#556370]">Вигідний для середніх і великих тиражів: стабільна передача кольорів, різні папери та післядрукарська обробка.</p>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center bg-white rounded-2xl shadow-soft border border-black/10 overflow-hidden">
+          <div class="order-2 md:order-1 px-7 py-7">
+            <h3 class="text-2xl font-bold mb-2">Цифровий друк</h3>
+            <p class="text-[#556370]">Швидкий старт із файлу, персоналізація та друк малих накладів у день замовлення.</p>
+          </div>
+          <div class="order-1 md:order-2 relative [background:linear-gradient(0deg,rgba(255,178,28,.15),rgba(255,178,28,.15)),#fff] flex items-center justify-center min-h-[220px]">
+            <img src="./logo-yellow.png" alt="Цифровий друк" class="max-w-[72%] h-auto drop-shadow-xl" />
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center bg-white rounded-2xl shadow-soft border border-black/10 overflow-hidden">
+          <div class="relative [background:linear-gradient(0deg,rgba(255,178,28,.15),rgba(255,178,28,.15)),#fff] flex items-center justify-center min-h-[220px]">
+            <img src="./logo-yellow.png" alt="Сувенірний друк" class="max-w-[72%] h-auto drop-shadow-xl" />
+          </div>
+          <div class="px-7 py-7">
+            <h3 class="text-2xl font-bold mb-2">Сувенірний друк</h3>
+            <p class="text-[#556370]">Нанесення логотипів на чашки, футболки, пакети, ручки та інші промо-матеріали.</p>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center bg-white rounded-2xl shadow-soft border border-black/10 overflow-hidden">
+          <div class="order-2 md:order-1 px-7 py-7">
+            <h3 class="text-2xl font-bold mb-2">Дизайн та препрес</h3>
+            <p class="text-[#556370]">Підготовка макетів за стандартами друку: перевірка роздільної здатності, кольоропроби, вивід форм.</p>
+          </div>
+          <div class="order-1 md:order-2 relative [background:linear-gradient(0deg,rgba(255,178,28,.15),rgba(255,178,28,.15)),#fff] flex items-center justify-center min-h-[220px]">
+            <img src="./logo-yellow.png" alt="Дизайн та препрес" class="max-w-[72%] h-auto drop-shadow-xl" />
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center bg-white rounded-2xl shadow-soft border border-black/10 overflow-hidden">
+          <div class="relative [background:linear-gradient(0deg,rgba(255,178,28,.15),rgba(255,178,28,.15)),#fff] flex items-center justify-center min-h-[220px]">
+            <img src="./logo-yellow.png" alt="Широкоформатний друк" class="max-w-[72%] h-auto drop-shadow-xl" />
+          </div>
+          <div class="px-7 py-7">
+            <h3 class="text-2xl font-bold mb-2">Широкоформатний друк</h3>
+            <p class="text-[#556370]">Банери, борди, постери, виставкові стенди — яскраво та стійко до зовнішніх умов.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <section id="products" aria-label="Продукція" class="scroll-mt-28 py-16 px-5">
+    <div class="max-w-[1200px] mx-auto">
+      <h2 class="text-[40px] text-center mb-7 font-bold tracking-wide">Продукція</h2>
+      <p class="text-center text-[#5b6a76] max-w-[860px] mx-auto mb-5">Вітрина з прикладами робіт. Зроблено у вигляді вкладок (таби). Поки використовуються плейсхолдери з логотипом.</p>
+
+      <div data-tabs>
+        <!-- Tabs header -->
+        <div role="tablist" aria-label="Категорії продукції" class="flex flex-wrap justify-center gap-3 mb-4">
+          <button class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white shadow-soft font-semibold whitespace-nowrap transition aria-selected:bg-accent aria-selected:text-white aria-selected:border-transparent" role="tab" id="tab-poly" aria-controls="panel-poly" aria-selected="true">
+            <svg viewBox="0 0 24 24" class="w-[22px] h-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/></svg>
+            <span>Поліграфія</span>
+          </button>
+          <button class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white shadow-soft font-semibold whitespace-nowrap transition aria-selected:bg-accent aria-selected:text-white aria-selected:border-transparent" role="tab" id="tab-pack" aria-controls="panel-pack" aria-selected="false">
+            <svg viewBox="0 0 24 24" class="w-[22px] h-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-2-2H7l-4 4v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2Z"/></svg>
+            <span>Паковання</span>
+          </button>
+          <button class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white shadow-soft font-semibold whitespace-nowrap transition aria-selected:bg-accent aria-selected:text-white aria-selected:border-transparent" role="tab" id="tab-suv" aria-controls="panel-suv" aria-selected="false">
+            <svg viewBox="0 0 24 24" class="w-[22px] h-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M5.5 5.5 8 8M16 16l2.5 2.5M16 8l2.5-2.5M8 16l-2.5 2.5"/></svg>
+            <span>Сувеніри</span>
+          </button>
+          <button class="tab inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white shadow-soft font-semibold whitespace-nowrap transition aria-selected:bg-accent aria-selected:text-white aria-selected:border-transparent" role="tab" id="tab-design" aria-controls="panel-design" aria-selected="false">
+            <svg viewBox="0 0 24 24" class="w-[22px] h-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20v-2M18 20v-4M3 4h18M9 8h6"/></svg>
+            <span>Дизайн</span>
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="tab-panels">
+          <!-- Поліграфія (з КП «Друкуємо» + що було) -->
+          <div id="panel-poly" role="tabpanel" aria-labelledby="tab-poly" class="panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- було -->
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/postcards-flyers-mockup.png" alt="Листівки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Листівки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/tri-fold-brochure-mockup.png" alt="Буклети" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Буклети</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/brochure-catalog-mockup.png" alt="Каталоги" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Каталоги</div></a>
+            <!-- додано з КП -->
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Меню / сети" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Меню / Сети</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Наліпки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Наліпки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Етикетки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Етикетки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="POS-матеріали" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">POS-матеріали</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Блокноти" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Блокноти</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/desk-calendar-mockup.png" alt="Календарі" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Календарі</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/business-cards-mockup.png" alt="Візитки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Візитки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Книги" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Книги</div></a>
+          </div>
+
+          <!-- Паковання (із КП: папки, пакети, хенгери, етикетки) -->
+          <div id="panel-pack" role="tabpanel" aria-labelledby="tab-pack" class="panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/brochure-catalog-mockup.png" alt="Папки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Папки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./mockup/paper-bag-mockup.png" alt="Пакети" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Пакети</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Хенгери" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Хенгери</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Етикетки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Етикетки</div></a>
+          </div>
+          <!-- Сувеніри (повністю з КП) -->
+          <div id="panel-suv" role="tabpanel" aria-labelledby="tab-suv" class="panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Ручки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Ручки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Футляри" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Футляри</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Флешки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Флешки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Чашки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Чашки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Тарілки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Тарілки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Сумки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Сумки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Кепки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Кепки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Футболки" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Футболки</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Шеврони" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Шеврони</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Прапори" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Прапори</div></a>
+          </div>
+
+          <!-- Дизайн (із КП) -->
+          <div id="panel-design" role="tabpanel" aria-labelledby="tab-design" class="panel hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Розробка логотипів" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Розробка логотипів</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Підбір шрифтів" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Підбір шрифтів</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Корпоративний стиль" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Корпоративний стиль</div></a>
+            <a class="group block bg-white rounded-xl border border-black/10 shadow-soft overflow-hidden" href="#"><img src="./logo-yellow.png" alt="Рекомендації щодо вибору типу друку" class="w-full h-[170px] object-contain [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]"><div class="font-semibold px-3.5 py-3 group-hover:text-brand transition">Рекомендації щодо вибору типу друку</div></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contacts" class="bg-[#101820] text-[#c5d2dc]">
+    <div class="max-w-[1200px] mx-auto px-5 py-9 grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="./logo-yellow.png" alt="POLIGRAFUA logo" class="h-11" />
+          <div>
+            <div class="font-extrabold text-[20px]">POLIGRAF<span class="text-brand">UA</span></div>
+            <div>Друкарня • Київ</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="grid gap-2">
+          <ul class="space-y-1" data-randomize="phones">
+            <li><a href="tel:+38000000000">+380 (00) 000-00-00 — Андрій</a></li>
+            <li><a href="tel:+38000000001">+380 (00) 000-00-01 — Олексій</a></li>
+            <li><a href="tel:+38000000002">+380 (00) 000-00-02 — В’ячеслав</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid gap-2 text-lg">
+        <a href="#services" class="transition hover:text-brand">Послуги</a>
+        <a href="#products" class="transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="transition hover:text-brand">Контакти</a>
+      </div>
+    </div>
+    <div class="w-screen min-h-[350px] border-t border-white/10">
+      <iframe title="Мапа — Довженка 3" src="https://www.google.com/maps?q=%D0%94%D0%BE%D0%B2%D0%B6%D0%B5%D0%BD%D0%BA%D0%B0%203%2C%20%D0%9A%D0%B8%D1%97%D0%B2&output=embed" class="block w-full h-[350px] border-0"></iframe>
+    </div>
+    <div class="text-center text-[14px] text-[#99a7b3] border-t border-white/10 py-3">© <span id="y"></span> POLIGRAFUA</div>
+  </footer>
+
+  <!-- ========== GSAP ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function(){
+      if (window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); }
+      const $ = (s)=>document.querySelector(s);
+      const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+      // Рік у футері
+      const yEl = $('#y'); if (yEl) yEl.textContent = new Date().getFullYear();
+
+      // Паралакс hero
+      $$('.relative [data-parallax]').forEach(function(layer){
+        const speed = parseFloat(layer.dataset.speed || '0.3');
+        gsap.to(layer, { yPercent: 20 * speed, ease: 'none', scrollTrigger: { scrub: true } });
+      });
+
+      // Появи
+      if ($('header a[href="#home"]') || $('nav')) gsap.from(['header a[href="#home"]','nav'], {y:-30, opacity:0, duration:.8, stagger:.15, ease:'power3.out'});
+      if ($('section h1')) gsap.from('section h1', {y:20, opacity:0, duration:.8, ease:'power3.out'});
+      if ($('section p')) gsap.from('section p', {y:20, opacity:0, duration:.8, delay:.1, ease:'power3.out'});
+
+      $$('.grid article').forEach(function(el, i){
+        const fromX = i % 2 === 0 ? -40 : 40;
+        gsap.from(el, {opacity:0, x:fromX, duration:.75, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 78%'}});
+      });
+
+      // Таби "Продукція"
+      const tabsRoot = document.querySelector('[data-tabs]');
+      if (tabsRoot){
+        const tabs = tabsRoot.querySelectorAll('[role="tab"]');
+        const panels = ['panel-poly','panel-pack','panel-large','panel-suv','panel-post'].map(function(id){return document.getElementById(id)});
+
+        function show(panel){
+          panels.forEach(function(p){ p.classList.toggle('hidden', p!==panel); });
+          const cards = panel ? panel.querySelectorAll('a.group') : [];
+          if (!cards || cards.length===0) return;
+          gsap.killTweensOf(cards);
+          gsap.fromTo(cards,{opacity:0, y:18},{opacity:1, y:0, duration:.5, stagger:.05, ease:'power2.out', clearProps:'opacity,transform'});
+        }
+        function activate(tab){
+          tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t===tab)); });
+          const pid = tab.getAttribute('aria-controls');
+          const panel = document.getElementById(pid);
+          show(panel);
+        }
+        tabs.forEach(function(t){ t.addEventListener('click', function(){ activate(t); }); });
+        tabsRoot.addEventListener('keydown', function(e){
+          if(e.key==='ArrowRight' || e.key==='ArrowLeft'){
+            const arr=[].slice.call(tabs); let i=arr.indexOf(document.activeElement); if(i<0) i=0;
+            i += (e.key==='ArrowRight'?1:-1); if(i<0) i=arr.length-1; if(i>=arr.length) i=0;
+            arr[i].focus(); activate(arr[i]);
+          }
+        });
+        // Показать первый таб
+        const firstPanel = document.getElementById('panel-poly');
+        if (firstPanel) { show(firstPanel); }
+      }
+
+      // Mobile menu
+      const burger = document.getElementById('burger');
+      const mm = document.getElementById('mobile-menu');
+      const panel = document.getElementById('mm-panel');
+      const mmClose = document.getElementById('mm-close');
+      const mmBackdrop = document.getElementById('mm-backdrop');
+      function openMM(){ if(!mm) return; mm.classList.remove('hidden'); requestAnimationFrame(function(){ if(panel) panel.classList.remove('translate-x-full'); }); if(burger) burger.setAttribute('aria-expanded','true'); }
+      function closeMM(){ if(!mm) return; if(panel) panel.classList.add('translate-x-full'); setTimeout(function(){ mm.classList.add('hidden'); },300); if(burger) burger.setAttribute('aria-expanded','false'); }
+      if (burger) burger.addEventListener('click', openMM);
+      if (mmBackdrop) mmBackdrop.addEventListener('click', closeMM);
+      if (mmClose) mmClose.addEventListener('click', closeMM);
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMM(); });
+      Array.from(document.querySelectorAll('#mobile-menu a')).forEach(function(a){ a.addEventListener('click', closeMM); });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const list = document.querySelector('[data-randomize="phones"]');
+      if (!list) return;
+
+      const items = Array.from(list.children);
+      // Фишер-Йетс:
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+
+      // Перерисовываем список разом (без мигания)
+      const frag = document.createDocumentFragment();
+      items.forEach(li => frag.appendChild(li));
+      list.appendChild(frag);
+    });
+  </script>
+</body>
+</html>

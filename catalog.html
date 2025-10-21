@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Каталог — POLIGRAFUA</title>
+  <meta name="description" content="Каталог продукції друкарні POLIGRAFUA. Виберіть позицію у списку ліворуч — праворуч зʼявиться опис та приклади робіт." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg:'#eaf3f8', ink:'#5c5c5c', brand:'#17a1e6', accent:'#ffb21c' },
+          boxShadow:{ soft:'0 10px 30px rgba(0,0,0,.08)' },
+          fontFamily:{ inter:['Inter','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial'] }
+        }
+      }
+    }
+  </script>
+  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}</style>
+</head>
+<body class="bg-bg text-ink">
+
+  <!-- ===== HEADER (как на главной) ===== -->
+  <header id="home" class="sticky top-0 z-50 bg-bg/90 backdrop-saturate-150 backdrop-blur-md border-b border-black/10">
+    <div class="max-w-[1200px] mx-auto flex items-center gap-6 py-5 px-5">
+      <a href="./index.html" aria-label="POLIGRAFUA" class="flex items-center gap-3">
+        <img class="h-20 w-auto drop-shadow-sm" src="./mockup/polyua_logo.png" alt="POLIGRAFUA logo" />
+      </a>
+      <!-- бургер на мобилке -->
+      <button id="burger" class="ml-auto md:hidden p-2 rounded-lg hover:bg-white/70" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <!-- десктоп-меню -->
+      <nav class="ml-auto hidden md:flex items-center gap-6">
+        <a href="index.html#services" class="font-semibold transition hover:text-brand">Послуги</a>
+        <a href="index.html#products" class="font-semibold transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="font-semibold transition hover:text-brand">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Сайдбар-меню (мобилка) -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+    <button id="mm-backdrop" class="absolute inset-0 bg-black/40" aria-label="Закрити меню"></button>
+    <aside id="mm-panel" class="absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-white text-ink shadow-soft p-5 translate-x-full transition-transform duration-300">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-extrabold text-lg">POLIGRAF<span class="text-brand">UA</span></span>
+        <button id="mm-close" class="p-2 rounded hover:bg-black/5" aria-label="Закрити">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+        </button>
+      </div>
+      <nav class="grid gap-3">
+        <a href="index.html#services" class="font-semibold transition hover:text-brand">Послуги</a>
+        <a href="index.html#products" class="font-semibold transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="font-semibold transition hover:text-brand">Контакти</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ===== Заголовок страницы ===== -->
+  <div class="max-w-[1200px] mx-auto px-5 pt-8 pb-3">
+    <h1 class="m-0 text-[36px] tracking-wide text-[#24333f] font-extrabold">Каталог продукції</h1>
+    <p class="mt-2 text-[#5b6a76]">Виберіть позицію ліворуч — справа зʼявиться опис і <strong>приклади робіт</strong>.</p>
+  </div>
+
+  <!-- ===== Макет каталога ===== -->
+  <main id="catalog" class="max-w-[1200px] mx-auto px-5 py-5 grid gap-5 md:grid-cols-[280px_1fr] items-start">
+  <!-- Sidebar -->
+    <aside class="md:sticky md:top-24">
+      <div class="bg-white border border-black/10 rounded-2xl shadow-soft overflow-hidden">
+        <h2 class="text-[16px] m-0 px-4 py-3 font-bold bg-[rgba(255,178,28,.08)] border-b border-black/10">УСЯ ПРОДУКЦІЯ</h2>
+        <ul class="m-0 p-2 list-none">
+          <!-- Поліграфія -->
+          <li>
+            <details open class="rounded-xl">
+              <summary class="cursor-pointer px-3 py-2 rounded-xl font-bold hover:bg-[rgba(23,161,230,.08)]">Поліграфія</summary>
+              <ul class="m-0 mt-1 mb-2 pl-1 list-none">
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="leaflets" aria-current="true">Листівки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="booklets">Буклети</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="catalogs">Каталоги</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="menusets">Меню / Сети</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="stickers">Наліпки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="labels">Етикетки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="posm">POS-матеріали</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="notepads">Блокноти</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="calendars">Календарі</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="businesscards">Візитки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="books">Книги</button></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Паковання -->
+          <li>
+            <details class="rounded-xl">
+              <summary class="cursor-pointer px-3 py-2 rounded-xl font-bold hover:bg-[rgba(23,161,230,.08)]">Паковання</summary>
+              <ul class="m-0 mt-1 mb-2 pl-1 list-none">
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="folders">Папки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="paperbags">Пакети</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="hangers">Хенгери</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="labels_pack">Етикетки</button></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Сувеніри -->
+          <li>
+            <details class="rounded-xl">
+              <summary class="cursor-pointer px-3 py-2 rounded-xl font-bold hover:bg-[rgba(23,161,230,.08)]">Сувеніри</summary>
+              <ul class="m-0 mt-1 mb-2 pl-1 list-none">
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="pens">Ручки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="cases">Футляри</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="flash">Флешки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="mugs">Чашки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="plates">Тарілки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="bags">Сумки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="caps">Кепки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="tshirts">Футболки</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="chevrons">Шеврони</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="flags">Прапори</button></li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Дизайн -->
+          <li>
+            <details class="rounded-xl">
+              <summary class="cursor-pointer px-3 py-2 rounded-xl font-bold hover:bg-[rgba(23,161,230,.08)]">Дизайн</summary>
+              <ul class="m-0 mt-1 mb-2 pl-1 list-none">
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="logos">Розробка логотипів</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="fonts">Підбір шрифтів</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="brandbook">Корпоративний стиль</button></li>
+                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="advice">Рекомендації щодо вибору типу друку</button></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+      <article class="bg-white border border-black/10 rounded-2xl shadow-soft overflow-hidden" id="product">
+        <div class="product-head flex gap-4 p-4 border-b border-black/10 items-center">
+          <img src="./logo-yellow.png" alt="" id="p-img" class="w-[140px] h-[120px] object-contain rounded-xl [background:linear-gradient(0deg,rgba(255,178,28,.12),rgba(255,178,28,.12))]">
+          <div>
+            <h2 id="p-title" class="text-[28px] font-bold m-0">Листівки</h2>
+            <p id="p-lead" class="text-[#556370] m-0">Компактна реклама для акцій і подій. Швидкий друк і яскраві кольори.</p>
+            <div id="p-specs" class="specs flex flex-wrap gap-2 mt-2">
+              <span class="px-3 py-1 rounded-full bg-[rgba(23,161,230,.08)] border border-dashed border-brand/40 font-semibold">A6–DL</span>
+              <span class="px-3 py-1 rounded-full bg-[rgba(23,161,230,.08)] border border-dashed border-brand/40 font-semibold">папір 130–170 г/м²</span>
+              <span class="px-3 py-1 rounded-full bg-[rgba(23,161,230,.08)] border border-dashed border-brand/40 font-semibold">друк 4+4</span>
+              <span class="px-3 py-1 rounded-full bg-[rgba(23,161,230,.08)] border border-dashed border-brand/40 font-semibold">від 100 шт</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="p-body" class="p-4">
+          <p>Стандартні розміри: A6 (105×148), A5 (148×210), DL (99×210). Можливе ламінування та індивідуальний формат.</p>
+        </div>
+
+        <div class="px-4 pb-4">
+          <h3 class="text-xl font-semibold mb-3">Приклади робіт</h3>
+          <div id="p-examples" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (как на главной) ===== -->
+  <footer id="contacts" class="bg-[#101820] text-[#c5d2dc]">
+    <div class="max-w-[1200px] mx-auto px-5 py-9 grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="./logo-yellow.png" alt="POLIGRAFUA logo" class="h-11" />
+          <div>
+            <div class="font-extrabold text-[20px]">POLIGRAF<span class="text-brand">UA</span></div>
+            <div>Друкарня • Київ</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="grid gap-2">
+          <ul class="space-y-1" data-randomize="phones">
+            <li><a href="tel:+38000000000">+380 (00) 000-00-00 — Андрій</a></li>
+            <li><a href="tel:+38000000001">+380 (00) 000-00-01 — Олексій</a></li>
+            <li><a href="tel:+38000000002">+380 (00) 000-00-02 — В’ячеслав</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid gap-2 text-lg">
+        <a href="index.html#services" class="transition hover:text-brand">Послуги</a>
+        <a href="index.html#products" class="transition hover:text-brand">Продукція</a>
+        <a href="#contacts" class="transition hover:text-brand">Контакти</a>
+      </div>
+    </div>
+    <div class="w-full min-h-[350px] border-t border-white/10">
+      <iframe title="Мапа — Довженка 3" src="https://www.google.com/maps?q=%D0%94%D0%BE%D0%B2%D0%B6%D0%B5%D0%BD%D0%BA%D0%B0%203%2C%20%D0%9A%D0%B8%D1%97%D0%B2&output=embed" class="block w-full h-[350px] border-0"></iframe>
+    </div>
+    <div class="text-center text-[14px] text-[#99a7b3] border-t border-white/10 py-3">© <span id="y"></span> POLIGRAFUA</div>
+  </footer>
+
+  <script>
+  // Набір даних (можеш розширювати — ключі збігаються з data-id)
+  const PRODUCTS = {
+    leaflets: {
+      title: 'Листівки',
+      img: 'mockup/postcards-flyers-mockup.png',
+      lead: 'Компактна реклама для акцій і подій. Швидкий друк і яскраві кольори.',
+      specs: ['A6–DL', 'папір 130–170 г/м²', 'друк 4+4', 'від 100 шт'],
+      body: 'Стандартні розміри: A6 (105×148), A5 (148×210), DL (99×210). Можливе ламінування та індивідуальний формат.',
+      examples: []
+    },
+    booklets: {
+      title: 'Буклети',
+      img: 'mockup/tri-fold-brochure-mockup.png',
+      lead: 'Три складки або індивідуальна фальцовка для презентацій і меню.',
+      specs: ['A4 → DL / A5', 'папір 130–170 г/м²', 'фальцювання', 'друк 4+4'],
+      body: 'Популярні схеми: 1/3 A4 (DL), A5. Доступна ламінація, вибірковий лак, бігування.',
+      examples: []
+    },
+    catalogs: {
+      title: 'Каталоги',
+      img: 'mockup/brochure-catalog-mockup.png',
+      lead: 'Багатосторінкові видання на скобі чи пружині для асортименту та прайсів.',
+      specs: ['формат A5–A4', 'обкладинка 200–300 г/м²', 'внутрішні 90–150 г/м²', 'скоба/пружина'],
+      body: 'Оформимо структуру, підкажемо папір і палітурку. Можливий твердий переплет.',
+      examples: []
+    },
+    menusets: {
+      title: 'Меню / Сети',
+      img: 'logo-yellow.png',
+      lead: 'Меню для кафе/ресторану, сети для суші і доставки.',
+      specs: ['A3–A4', 'ламінація мат/глянець', 'двосторонній друк'],
+      body: 'Зробимо серію меню під сезони. Додатково — підбір шрифтів та фотостиль.',
+      examples: []
+    },
+    stickers: {
+      title: 'Наліпки',
+      img: 'logo-yellow.png',
+      lead: 'Наклейки будь-якої форми: круглі, фігурні, на аркушах або в рулоні.',
+      specs: ['самоклейка', 'порізка по контуру', 'ламінація за потреби'],
+      body: 'Доступні матеріали: папір, ПВХ, прозорі плівки. Малий і середній наклад.',
+      examples: []
+    },
+    labels: {
+      title: 'Етикетки',
+      img: 'logo-yellow.png',
+      lead: 'Етикетки для продукції та паковання — на аркушах або рулонні.',
+      specs: ['папір/ПВХ', 'клеєвий шар', 'порізка'],
+      body: 'Порадимо матеріал під умови зберігання: волога, мороз, контакт із жиром.',
+      examples: []
+    },
+    posm: {
+      title: 'POS-матеріали',
+      img: 'logo-yellow.png',
+      lead: 'Хенгери, воблери, шелфтокери — все для полиці та касової зони.',
+      specs: ['малі тиражі', 'фігурна висічка', 'швидкі терміни'],
+      body: 'Допоможемо з макетом під ваші полиці/гаки. Можлива змінна персоналізація.',
+      examples: []
+    },
+    notepads: {
+      title: 'Блокноти',
+      img: 'logo-yellow.png',
+      lead: 'На склейці або на пружині. Корпоративна розмітка й обкладинка.',
+      specs: ['A6–A4', '50–100 арк.', 'пружина/склейка'],
+      body: 'Папір 80–100 г/м². Можлива нумерація, перфорація, друк на звороті.',
+      examples: []
+    },
+    calendars: {
+      title: 'Календарі',
+      img: 'mockup/desk-calendar-mockup.png',
+      lead: 'Настільні, квартальні, настінні — корпоративна айдентика в кожному офісі.',
+      specs: ['настільний/квартальний', 'пружина', 'ламінація'],
+      body: 'Розробимо сітку, святкові дати, бренд-елементи. Упаковка як подарунок.',
+      examples: []
+    },
+    businesscards: {
+      title: 'Візитки',
+      img: 'mockup/business-cards-mockup.png',
+      lead: 'Класичні або преміум зі спецефектами.',
+      specs: ['350–400 г/м²', 'ламінація/soft-touch', 'тиснення/фольга — опц.'],
+      body: 'Стандарт 90×50 мм або індивідуальний. Можливе округлення кутів.',
+      examples: []
+    },
+    books: {
+      title: 'Книги',
+      img: 'logo-yellow.png',
+      lead: 'М’яка/тверда палітурка, тираж від десятків до тисяч.',
+      specs: ['формат A5–A4', 'офсет/крейда', 'клейовий/ниткошиття'],
+      body: 'Допоможемо з версткою, ISBN, обкладинкою та вибором паперу.',
+      examples: []
+    },
+
+    // Паковання
+    folders: { title: 'Папки', img: 'mockup/brochure-catalog-mockup.png', lead: 'Папки з клапаном під документи.', specs: ['крейда 300+ г/м²', 'висічка', 'ламінація'], body: 'Стандарт А4, кишеня під візитку.' },
+    paperbags: { title: 'Пакети', img: 'mockup/paper-bag-mockup.png', lead: 'Паперові пакети з шнурками.', specs: ['білий/крафт', 'тиснення/фольга', 'від 100 шт'], body: 'Підберемо розмір і міцність під вагу.' },
+    hangers: { title: 'Хенгери', img: 'logo-yellow.png', lead: 'Дверні підвіски/хенгери для акцій.', specs: ['картон 250+ г/м²', 'висічка'], body: 'Фігурні форми, персоналізація серіями.' },
+    labels_pack: { title: 'Етикетки', img: 'logo-yellow.png', lead: 'Етикетки для паковання і продукції.', specs: ['аркуш/рулон', 'мат/глянець'], body: 'Стійкі клеї під різні умови.' },
+
+    // Сувеніри
+    pens: { title: 'Ручки', img: 'logo-yellow.png', lead: 'Пластик/метал, тамподрук/гравіювання.', specs: ['1-4 кольори', 'від 50 шт'], body: 'Добір кольору корпусу під бренд.' },
+    cases: { title: 'Футляри', img: 'logo-yellow.png', lead: 'Подарункові футляри під ручки і набори.', specs: ['пластик/картон'], body: 'Індивідуальний брендинг.' },
+    flash: { title: 'Флешки', img: 'logo-yellow.png', lead: 'USB з логотипом.', specs: ['8–64 ГБ', 'тампо/гравіювання'], body: 'Корпуси: дерево, метал, пластик.' },
+    mugs: { title: 'Чашки', img: 'logo-yellow.png', lead: 'Сублімаційний друк по колу.', specs: ['кераміка', 'об’єм 330 мл'], body: 'Пакування як подарунок — опція.' },
+    plates: { title: 'Тарілки', img: 'logo-yellow.png', lead: 'Пам’ятні тарілки з логотипом.', specs: ['кераміка'], body: 'Підставка/пакування — опції.' },
+    bags: { title: 'Сумки', img: 'logo-yellow.png', lead: 'Бавовна/нон-вовен з шовкодруком.', specs: ['1-4 кольори'], body: 'Розміри під продукт.' },
+    caps: { title: 'Кепки', img: 'logo-yellow.png', lead: 'Лого вишивкою чи термоплівкою.', specs: ['бейсболки 5/6 панелей'], body: 'Кольори під брендбук.' },
+    tshirts: { title: 'Футболки', img: 'logo-yellow.png', lead: 'Шовкодрук/DTF на 100% бавовні.', specs: ['S-XXL', '1-6 кольорів'], body: 'Можливий повноколірний друк.' },
+    chevrons: { title: 'Шеврони', img: 'logo-yellow.png', lead: 'Вишиті або термодрук.', specs: ['будь-яка форма'], body: 'Кріплення на липучці чи пришивні.' },
+    flags: { title: 'Прапори', img: 'logo-yellow.png', lead: 'Настільні/вуличні прапори з друком.', specs: ['поліестер', 'ущільнений край'], body: 'Щогли та фурнітура — опції.' },
+
+    // Дизайн
+    logos: { title: 'Розробка логотипів', img: 'logo-yellow.png', lead: 'Лого під ваш бренд і сферу.', specs: ['3–5 концептів', 'гайди з використання'], body: 'Передамо вихідні файли та набори іконок.' },
+    fonts: { title: 'Підбір шрифтів', img: 'logo-yellow.png', lead: 'Типографіка під характер бренду.', specs: ['латинка/кирилиця'], body: 'Легальні ліцензії та варіанти заміни.' },
+    brandbook: { title: 'Корпоративний стиль', img: 'logo-yellow.png', lead: 'Єдиний візуальний код бренду.', specs: ['логотип', 'кольори', 'шрифти', 'носії'], body: 'Короткий бренд-гайд або повний брендбук.' },
+    advice: { title: 'Рекомендації щодо вибору типу друку', img: 'logo-yellow.png', lead: 'Допоможемо обрати технологію і матеріали.', specs: ['офсет/цифра/УФ', 'матеріали'], body: 'Оптимізуємо собівартість і терміни.' }
+  };
+
+  const el = (sel) => document.querySelector(sel);
+  const pImg = el('#p-img');
+  const pTitle = el('#p-title');
+  const pLead = el('#p-lead');
+  const pSpecs = el('#p-specs');
+  const pBody = el('#p-body');
+  const pExamples = el('#p-examples');
+
+  function renderProduct(key) {
+    const d = PRODUCTS[key];
+    if (!d) return;
+    pImg.src = d.img || 'logo-yellow.png';
+    pTitle.textContent = d.title || '';
+    pLead.textContent = d.lead || '';
+    pSpecs.innerHTML = (d.specs || []).map(s => `<span class="px-3 py-1 rounded-full bg-[rgba(23,161,230,.08)] border border-dashed border-brand/40 font-semibold">${s}</span>`).join('');
+    pBody.innerHTML = `<p>${d.body || ''}</p>`;
+    pExamples.innerHTML = (d.examples || []).map(src => `<img src="./${src}" class="w-full h-[150px] object-cover rounded-xl border border-black/10">`).join('');
+  }
+
+  // Навешиваем клики на кнопки
+  document.querySelectorAll('.item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.item[aria-current="true"]').forEach(b => b.removeAttribute('aria-current'));
+      btn.setAttribute('aria-current', 'true');
+      renderProduct(btn.dataset.id);
+    });
+  });
+
+  // Первичная инициализация по активной кнопке
+  (function init() {
+    const current = document.querySelector('.item[aria-current="true"]');
+    if (current) renderProduct(current.dataset.id);
+  })();
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const list = document.querySelector('[data-randomize="phones"]');
+      if (!list) return;
+
+      const items = Array.from(list.children);
+      // Фишер-Йетс:
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+
+      // Перерисовываем список разом (без мигания)
+      const frag = document.createDocumentFragment();
+      items.forEach(li => frag.appendChild(li));
+      list.appendChild(frag);
+  });
+
+  </script>
+</body>
+</html>
