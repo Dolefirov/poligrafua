@@ -381,6 +381,29 @@
       list.appendChild(frag);
   });
 
+  window.addEventListener('DOMContentLoaded', function(){
+      if (window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); }
+      const $ = (s)=>document.querySelector(s);
+      const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+      // Рік у футері
+      const yEl = $('#y'); if (yEl) yEl.textContent = new Date().getFullYear();
+
+      // Mobile menu
+      const burger = document.getElementById('burger');
+      const mm = document.getElementById('mobile-menu');
+      const panel = document.getElementById('mm-panel');
+      const mmClose = document.getElementById('mm-close');
+      const mmBackdrop = document.getElementById('mm-backdrop');
+      function openMM(){ if(!mm) return; mm.classList.remove('hidden'); requestAnimationFrame(function(){ if(panel) panel.classList.remove('translate-x-full'); }); if(burger) burger.setAttribute('aria-expanded','true'); }
+      function closeMM(){ if(!mm) return; if(panel) panel.classList.add('translate-x-full'); setTimeout(function(){ mm.classList.add('hidden'); },300); if(burger) burger.setAttribute('aria-expanded','false'); }
+      if (burger) burger.addEventListener('click', openMM);
+      if (mmBackdrop) mmBackdrop.addEventListener('click', closeMM);
+      if (mmClose) mmClose.addEventListener('click', closeMM);
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMM(); });
+      Array.from(document.querySelectorAll('#mobile-menu a')).forEach(function(a){ a.addEventListener('click', closeMM); });
+    });
+
   </script>
 </body>
 </html>
