@@ -128,19 +128,6 @@
               </ul>
             </details>
           </li>
-
-          <!-- Дизайн -->
-          <li>
-            <details class="rounded-xl">
-              <summary class="cursor-pointer px-3 py-2 rounded-xl font-bold hover:bg-[rgba(23,161,230,.08)]">Дизайн</summary>
-              <ul class="m-0 mt-1 mb-2 pl-1 list-none">
-                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="logos">Розробка логотипів</button></li>
-                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="fonts">Підбір шрифтів</button></li>
-                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="brandbook">Корпоративний стиль</button></li>
-                <li><button class="item w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-semibold hover:bg-black/5 transition aria-[current=true]:bg-brand aria-[current=true]:text-white" data-id="advice">Рекомендації щодо вибору типу друку</button></li>
-              </ul>
-            </details>
-          </li>
         </ul>
       </div>
     </aside>
@@ -316,12 +303,6 @@
     tshirts: { title: 'Футболки', img: 'logo-yellow.png', lead: 'Шовкодрук/DTF на 100% бавовні.', specs: ['S-XXL', '1-6 кольорів'], body: 'Можливий повноколірний друк.' },
     chevrons: { title: 'Шеврони', img: 'logo-yellow.png', lead: 'Вишиті або термодрук.', specs: ['будь-яка форма'], body: 'Кріплення на липучці чи пришивні.' },
     flags: { title: 'Прапори', img: 'logo-yellow.png', lead: 'Настільні/вуличні прапори з друком.', specs: ['поліестер', 'ущільнений край'], body: 'Щогли та фурнітура — опції.' },
-
-    // Дизайн
-    logos: { title: 'Розробка логотипів', img: 'logo-yellow.png', lead: 'Лого під ваш бренд і сферу.', specs: ['3–5 концептів', 'гайди з використання'], body: 'Передамо вихідні файли та набори іконок.' },
-    fonts: { title: 'Підбір шрифтів', img: 'logo-yellow.png', lead: 'Типографіка під характер бренду.', specs: ['латинка/кирилиця'], body: 'Легальні ліцензії та варіанти заміни.' },
-    brandbook: { title: 'Корпоративний стиль', img: 'logo-yellow.png', lead: 'Єдиний візуальний код бренду.', specs: ['логотип', 'кольори', 'шрифти', 'носії'], body: 'Короткий бренд-гайд або повний брендбук.' },
-    advice: { title: 'Рекомендації щодо вибору типу друку', img: 'logo-yellow.png', lead: 'Допоможемо обрати технологію і матеріали.', specs: ['офсет/цифра/УФ', 'матеріали'], body: 'Оптимізуємо собівартість і терміни.' }
   };
 
   const el = (sel) => document.querySelector(sel);
@@ -351,6 +332,31 @@
       renderProduct(btn.dataset.id);
     });
   });
+
+  function selectFromUrl() {
+    const params = new URLSearchParams(location.search);
+    const hash = location.hash ? location.hash.replace('#', '') : '';
+    const key = params.get('item') || hash; // поддержим и #leaflets
+    if (!key) return;
+
+    // Найдём кнопку по data-id и выделим
+    const btn = document.querySelector(`.item[data-id="${key}"]`);
+    if (!btn) return;
+
+    // Снять предыдущие выделения
+    document.querySelectorAll('.item[aria-current="true"]').forEach(b => b.removeAttribute('aria-current'));
+
+    // Раскрыть нужный <details>, если кнопка внутри свёрнутого раздела
+    const details = btn.closest('details');
+    if (details && !details.open) details.open = true;
+
+    // Выделить и отрендерить
+    btn.setAttribute('aria-current', 'true');
+    renderProduct(key);
+  }
+
+  // Вызвать прямо перед init()
+  selectFromUrl();
 
   // Первичная инициализация по активной кнопке
   (function init() {
